@@ -1,0 +1,27 @@
+{
+  "usuarios": [
+    {
+      "nome": "victor arndt",
+      "email": "victor07.arndt@hotmail.com",
+      "senha": "071102",
+      "id": "HQRTikjy0MU"
+    },
+    {
+      "nome": "Thaliana Rosinha Reis",
+      "email": "thata@hotmail.com",
+      "senha": "123456",
+      "id": "yhiXpfeWRwA"
+    }
+  ],
+  "reservas": [
+    {
+      "nome": "victor arndt",
+      "email": "victor07.arndt@hotmail.com",
+      "quadra": "Bola Na Rede - Futsal",
+      "data": "2026-05-26",
+      "horario": "21:00",
+      "id": "upZMDBJBWE8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

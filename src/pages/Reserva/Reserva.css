@@ -1,0 +1,166 @@
+.reserva-container {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+}
+
+.reserva-box {
+  width: 100%;
+  max-width: 900px;
+
+  background-color: #0b0b0b;
+
+  border: 1px solid #222;
+  border-radius: 16px;
+
+  padding: 35px;
+}
+
+.reserva-box h2 {
+  color: white;
+  margin-bottom: 30px;
+
+  font-size: 28px;
+}
+
+.form-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.campo label {
+  color: white;
+  margin-bottom: 10px;
+
+  font-size: 15px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+
+  background-color: #000;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  padding: 14px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.campo textarea {
+  height: 90px;
+  resize: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #b6ff00;
+}
+
+.linha {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-confirmar {
+  width: 100%;
+
+  background-color: #b6ff00;
+  color: black;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 16px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn-confirmar:hover {
+  background-color: #a2e600;
+}
+
+.seguro {
+  color: #999;
+  text-align: center;
+
+  font-size: 14px;
+}
+.mensagem-sucesso { color: green; }
+.mensagem-erro { color: red; }
+.popup-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.btn-fechar{
+  background-color: #ff0000;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .reserva-container {
+    padding: 20px 16px;
+    align-items: flex-start;
+  }
+
+  .reserva-box {
+    padding: 24px 16px;
+  }
+
+  .reserva-box h2 {
+    font-size: 22px;
+  }
+
+  .linha {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .btn-confirmar {
+    font-size: 16px;
+  }
+}
