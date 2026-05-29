@@ -58,13 +58,6 @@ export default function Inicio() {
             <p>Transações 100% seguras e protegidas.</p>
           </div>
         </div>
-        <div className="feature">
-          <div className="feature-icone">👥</div>
-          <div>
-            <h3>Para todos os esportes</h3>
-            <p>Futebol, society, futsal e muito mais.</p>
-          </div>
-        </div>
       </section>
 
       <section className="como-funciona">
