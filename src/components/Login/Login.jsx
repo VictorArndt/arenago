@@ -20,7 +20,6 @@ export default function Login({ onFechar }) {
       return
     }
 
-    // Busca o usuário pelo e-mail no json-server
     const resposta = await fetch(`http://localhost:3001/usuarios?email=${email}`)
     const usuarios = await resposta.json()
 
@@ -37,15 +36,14 @@ export default function Login({ onFechar }) {
     }
 
     setErro("")
-    alert(`Bem-vindo, ${usuario.nome}!`)
-    onFechar()
+    onFechar(usuario)
   }
 
   return (
     <div className="login-fundo">
       <div className="login-box">
 
-        <button className="login-fechar" onClick={onFechar}>✕</button>
+        <button className="login-fechar" onClick={() => onFechar(null)}>✕</button>
 
         <h2 className="login-titulo">Entrar</h2>
         <p className="login-subtitulo">Acesse sua conta para fazer reservas</p>

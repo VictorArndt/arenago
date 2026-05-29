@@ -4,6 +4,7 @@ import Inicio from "./pages/Inicio/Inicio"
 import Reserva from "./pages/Reserva/Reserva"
 import Sobre from "./pages/Sobre/Sobre"
 import Quadras from "./pages/Quadras/Quadras"
+import Pagamento from "./components/Pagamento"
 
 function App() {
   return (

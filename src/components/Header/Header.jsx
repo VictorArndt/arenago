@@ -1,5 +1,5 @@
 import "./Header.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Login from "../Login/Login"
 import Cadastro from "../Cadastro/Cadastro"
@@ -8,6 +8,24 @@ export default function Header() {
   const [mostrarLogin, setMostrarLogin] = useState(false)
   const [mostrarCadastro, setMostrarCadastro] = useState(false)
   const [menuAberto, setMenuAberto] = useState(false)
+  const [usuarioLogado, setUsuarioLogado] = useState(null)
+
+  useEffect(() => {
+    const salvo = localStorage.getItem("usuarioLogado")
+    if (salvo) setUsuarioLogado(JSON.parse(salvo))
+  }, [])
+
+  function handleLogin(usuario) {
+    if (!usuario) return
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario))
+    setUsuarioLogado(usuario)
+    setMostrarLogin(false)
+  }
+
+  function handleLogout() {
+    localStorage.removeItem("usuarioLogado")
+    setUsuarioLogado(null)
+  }
 
   return (
     <>
@@ -26,12 +44,17 @@ export default function Header() {
         </nav>
 
         <div className="buttons">
-          <button className="btn-login" onClick={() => setMostrarLogin(true)}>
-            Entrar
-          </button>
-          <button className="btn-cadastro" onClick={() => setMostrarCadastro(true)}>
-            Cadastrar
-          </button>
+          {usuarioLogado ? (
+            <>
+              <span className="usuario-nome">Olá, {usuarioLogado.nome}!</span>
+              <button className="btn-login" onClick={handleLogout}>Sair</button>
+            </>
+          ) : (
+            <>
+              <button className="btn-login" onClick={() => setMostrarLogin(true)}>Entrar</button>
+              <button className="btn-cadastro" onClick={() => setMostrarCadastro(true)}>Cadastrar</button>
+            </>
+          )}
         </div>
 
         <button className="menu-toggle" onClick={() => setMenuAberto(!menuAberto)}>
@@ -40,7 +63,7 @@ export default function Header() {
 
       </header>
 
-      {mostrarLogin && <Login onFechar={() => setMostrarLogin(false)} />}
+      {mostrarLogin && <Login onFechar={handleLogin} />}
       {mostrarCadastro && <Cadastro onFechar={() => setMostrarCadastro(false)} />}
     </>
   )

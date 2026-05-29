@@ -36,7 +36,7 @@ export default function Reserva() {
       return
     }
 
-    // Salva a reserva no json-server
+    
     await fetch("http://localhost:3001/reservas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

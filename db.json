@@ -75,6 +75,14 @@
       "data": "2026-11-07",
       "horario": "18:00",
       "id": "ZkE-F6C1cB8"
+    },
+    {
+      "nome": "victor arndt",
+      "email": "victor07.arndt@hotmail.com",
+      "quadra": "Bola Na Rede - Futsal",
+      "data": "2026-11-07",
+      "horario": "18:00",
+      "id": "Xptl80YB-60"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
