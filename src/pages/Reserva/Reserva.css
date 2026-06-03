@@ -172,3 +172,27 @@
     font-size: 16px;
   }
 }
+
+/* Campo preenchido automaticamente */
+.campo-preenchido {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0f1f00;
+  border: 1px solid #b6ff00;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.campo-valor {
+  color: white;
+  font-size: 15px;
+  flex: 1;
+}
+
+.campo-badge {
+  color: #b6ff00;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}

@@ -1,9 +1,9 @@
 import "./Reserva.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { quadras } from "../../data/quadras"
+import { useNavigate } from "react-router-dom"
 
 export default function Reserva() {
-
   const [quadra, setQuadra] = useState("")
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
@@ -11,6 +11,18 @@ export default function Reserva() {
   const [horario, setHorario] = useState("18:00")
   const [erro, setErro] = useState("")
   const [sucesso, setSucesso] = useState(false)
+  const [usuarioLogado, setUsuarioLogado] = useState(null)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const salvo = localStorage.getItem("usuarioLogado")
+    if (salvo) {
+      const usuario = JSON.parse(salvo)
+      setUsuarioLogado(usuario)
+      setNome(usuario.nome)
+      setEmail(usuario.email)
+    }
+  }, [])
 
   function formatarData(data) {
     const [ano, mes, dia] = data.split("-")
@@ -36,22 +48,23 @@ export default function Reserva() {
       return
     }
 
-    
-    await fetch("http://localhost:3001/reservas", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nome, email, quadra, data, horario })
-    })
-
     setErro("")
-    setSucesso(true)
-  }
 
+    navigate("/pagamento", {
+      state: {
+      nome,
+      email,
+      quadra,
+      data,
+      horario
+      }
+    })
+  }
   return (
     <section className="reserva-container">
       <div className="reserva-box">
 
-        <h2> Dados da Reserva</h2>
+        <h2>Dados da Reserva</h2>
 
         {sucesso && (
           <div className="popup-fundo">
@@ -66,22 +79,36 @@ export default function Reserva() {
 
           <div className="campo">
             <label>Nome completo</label>
-            <input
-              type="text"
-              placeholder="Digite seu nome completo"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
+            {usuarioLogado ? (
+              <div className="campo-preenchido">
+                <span className="campo-valor">{nome}</span>
+                <span className="campo-badge">✓ Preenchido automaticamente</span>
+              </div>
+            ) : (
+              <input
+                type="text"
+                placeholder="Digite seu nome completo"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            )}
           </div>
 
           <div className="campo">
             <label>E-mail</label>
-            <input
-              type="email"
-              placeholder="Digite seu e-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            {usuarioLogado ? (
+              <div className="campo-preenchido">
+                <span className="campo-valor">{email}</span>
+                <span className="campo-badge">✓ Preenchido automaticamente</span>
+              </div>
+            ) : (
+              <input
+                type="email"
+                placeholder="Digite seu e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            )}
           </div>
 
           <div className="campo">

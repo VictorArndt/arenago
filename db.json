@@ -35,54 +35,6 @@
       "data": "2027-06-10",
       "horario": "20:00",
       "id": "Sg9hW5_70QM"
-    },
-    {
-      "nome": "victor arndt",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Society",
-      "data": "2026-11-02",
-      "horario": "18:00",
-      "id": "m5m4KzCI80Y"
-    },
-    {
-      "nome": "victor arndt",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Society",
-      "data": "2026-11-02",
-      "horario": "18:00",
-      "id": "yqOSWpmbRBk"
-    },
-    {
-      "nome": "victor arndt",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Society",
-      "data": "2026-11-02",
-      "horario": "18:00",
-      "id": "O_wD9bgjjIU"
-    },
-    {
-      "nome": "victor",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Society",
-      "data": "2026-11-07",
-      "horario": "18:00",
-      "id": "oLgSvlbeeJs"
-    },
-    {
-      "nome": "victor",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Society",
-      "data": "2026-11-07",
-      "horario": "18:00",
-      "id": "ZkE-F6C1cB8"
-    },
-    {
-      "nome": "victor arndt",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Futsal",
-      "data": "2026-11-07",
-      "horario": "18:00",
-      "id": "Xptl80YB-60"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

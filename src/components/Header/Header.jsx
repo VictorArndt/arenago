@@ -30,7 +30,6 @@ export default function Header() {
   return (
     <>
       <header className="header">
-
         <div className="logo-area">
           <Link to="/">
             <img src="/logo1.png" alt="Logo" className="logo" />
@@ -38,33 +37,76 @@ export default function Header() {
         </div>
 
         <nav className={`menu ${menuAberto ? "aberto" : ""}`}>
-          <Link to="/" onClick={() => setMenuAberto(false)}>Início</Link>
-          <Link to="/quadras" onClick={() => setMenuAberto(false)}>Quadras</Link>
-          <Link to="/sobre" onClick={() => setMenuAberto(false)}>Sobre</Link>
+          <Link to="/" onClick={() => setMenuAberto(false)}>
+            Início
+          </Link>
+
+          <Link to="/quadras" onClick={() => setMenuAberto(false)}>
+            Quadras
+          </Link>
+
+          <Link to="/sobre" onClick={() => setMenuAberto(false)}>
+            Sobre
+          </Link>
         </nav>
 
         <div className="buttons">
           {usuarioLogado ? (
             <>
-              <span className="usuario-nome">Olá, {usuarioLogado.nome}!</span>
-              <button className="btn-login" onClick={handleLogout}>Sair</button>
+              <span className="usuario-nome">
+                Olá, {usuarioLogado.nome}!
+              </span>
+
+              <Link
+                to="/minhas-reservas"
+                className="btn-minhas-reservas"
+              >
+                Minhas Reservas
+              </Link>
+
+              <button
+                className="btn-login"
+                onClick={handleLogout}
+              >
+                Sair
+              </button>
             </>
           ) : (
             <>
-              <button className="btn-login" onClick={() => setMostrarLogin(true)}>Entrar</button>
-              <button className="btn-cadastro" onClick={() => setMostrarCadastro(true)}>Cadastrar</button>
+              <button
+                className="btn-login"
+                onClick={() => setMostrarLogin(true)}
+              >
+                Entrar
+              </button>
+
+              <button
+                className="btn-cadastro"
+                onClick={() => setMostrarCadastro(true)}
+              >
+                Cadastrar
+              </button>
             </>
           )}
         </div>
 
-        <button className="menu-toggle" onClick={() => setMenuAberto(!menuAberto)}>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuAberto(!menuAberto)}
+        >
           {menuAberto ? "✕" : "☰"}
         </button>
-
       </header>
 
-      {mostrarLogin && <Login onFechar={handleLogin} />}
-      {mostrarCadastro && <Cadastro onFechar={() => setMostrarCadastro(false)} />}
+      {mostrarLogin && (
+        <Login onFechar={handleLogin} />
+      )}
+
+      {mostrarCadastro && (
+        <Cadastro
+          onFechar={() => setMostrarCadastro(false)}
+        />
+      )}
     </>
   )
 }

@@ -1,0 +1,293 @@
+.mr-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  padding: 40px 20px;
+}
+
+.mr-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Topo */
+.mr-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mr-titulo {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.mr-subtitulo {
+  color: #888;
+  font-size: 15px;
+}
+
+.mr-subtitulo strong {
+  color: #b6ff00;
+}
+
+/* Botão nova reserva */
+.mr-btn-nova {
+  background-color: #b6ff00;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.mr-btn-nova:hover {
+  background-color: #a2e600;
+}
+
+/* Mensagem de feedback */
+.mr-mensagem {
+  background-color: #0f1f00;
+  border: 1px solid #b6ff00;
+  color: #b6ff00;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+/* Estado vazio */
+.mr-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 20px;
+  color: #555;
+  text-align: center;
+}
+
+.mr-vazio-icone {
+  font-size: 52px;
+}
+
+.mr-vazio p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Loading */
+.mr-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 20px;
+  color: #666;
+}
+
+.mr-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #222;
+  border-top-color: #b6ff00;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Lista de reservas */
+.mr-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Card */
+.mr-card {
+  background-color: #0b0b0b;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+
+.mr-card:hover {
+  border-color: #333;
+}
+
+.mr-card-passada {
+  opacity: 0.5;
+}
+
+.mr-card-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Status badge */
+.mr-status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.mr-status-ativa {
+  background-color: #0f1f00;
+  color: #b6ff00;
+  border: 1px solid #b6ff00;
+}
+
+.mr-status-passada {
+  background-color: #1a1a1a;
+  color: #555;
+  border: 1px solid #333;
+}
+
+.mr-quadra {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mr-detalhes {
+  display: flex;
+  gap: 20px;
+  color: #888;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+/* Botão cancelar */
+.mr-btn-cancelar {
+  background-color: transparent;
+  color: #ff4444;
+  border: 1px solid #ff4444;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.mr-btn-cancelar:hover {
+  background-color: #ff4444;
+  color: white;
+}
+
+/* Modal de confirmação */
+.mr-modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.mr-modal {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mr-modal h3 {
+  color: white;
+  font-size: 20px;
+}
+
+.mr-modal p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mr-modal-acoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.mr-btn-voltar {
+  flex: 1;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mr-btn-voltar:hover {
+  border-color: #888;
+}
+
+.mr-btn-confirmar-cancel {
+  flex: 1;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mr-btn-confirmar-cancel:hover {
+  background-color: #cc0000;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .mr-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mr-card-direita {
+    width: 100%;
+  }
+
+  .mr-btn-cancelar {
+    width: 100%;
+    text-align: center;
+  }
+}

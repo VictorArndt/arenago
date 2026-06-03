@@ -1,0 +1,112 @@
+.pagamento-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+
+  background: #3e3e3e;
+  border-radius: 12px;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.pagamento-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.resumo {
+  border: 2px solid #7FFF00;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.valor {
+  font-size: 24px;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+/* MÉTODOS DE PAGAMENTO */
+
+.metodos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.metodos button {
+  flex: 1;
+  padding: 12px;
+
+  background-color: #000;
+  color: #7FFF00;
+
+  border: 2px solid #7FFF00;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.metodos button:hover {
+  background-color: #7FFF00;
+  color: #000;
+}
+
+/* ÁREA DO PAGAMENTO */
+
+.pagamento-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #000;
+  color: white;
+
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.pagamento-box h4 {
+  color: #7FFF00;
+}
+
+.pagamento-box input {
+  padding: 10px;
+
+  border: 1px solid #7FFF00;
+  border-radius: 6px;
+
+  background-color: #111;
+  color: white;
+}
+
+.pagamento-box input::placeholder {
+  color: #aaa;
+}
+
+.pagamento-box button {
+  padding: 12px;
+
+  background: #7FFF00;
+  color: #000;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagamento-box button:hover {
+  background: #16a34a;
+  color: white;
+}
