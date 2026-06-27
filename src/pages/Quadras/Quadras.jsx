@@ -37,6 +37,14 @@ export default function Quadras() {
   const [comentario, setComentario] = useState("")
   const [erroAvaliacao, setErroAvaliacao] = useState("")
 
+  function handleReservar() {
+    const logado = localStorage.getItem("usuarioLogado")
+    if (logado) {
+      navigate("/reserva")
+    } else {
+      window.dispatchEvent(new CustomEvent("abrirLogin", { detail: { redirecionarPara: "/reserva" } }))
+    }
+  }
   const filtradas = filtro === "Todas"
     ? listaQuadras
     : listaQuadras.filter((q) => q.modalidade === filtro)
@@ -123,7 +131,7 @@ export default function Quadras() {
                 </div>
 
                 <div className="quadra-acoes">
-                  <button className="btn-reservar-quadra" onClick={() => navigate("/reserva")}>
+                  <button className="btn-reservar-quadra" onClick={handleReservar}>
                     Reservar
                   </button>
                   <button className="btn-avaliar" onClick={() => abrirModal(quadra.id)}>

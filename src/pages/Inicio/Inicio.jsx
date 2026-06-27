@@ -4,6 +4,15 @@ import { useNavigate } from "react-router-dom"
 export default function Inicio() {
   const navigate = useNavigate()
 
+  function handleReservar() {
+    const logado = localStorage.getItem("usuarioLogado")
+    if (logado) {
+      navigate("/reserva")
+    } else {
+      window.dispatchEvent(new CustomEvent("abrirLogin", { detail: { redirecionarPara: "/reserva" } }))
+    }
+  }
+
   return (
     <div className="inicio">
       <section className="hero">
@@ -20,7 +29,7 @@ export default function Inicio() {
           </p>
 
           <div className="hero-botoes">
-            <button className="btn-reservar" onClick={() => navigate("/reserva")}>
+            <button className="btn-reservar" onClick={handleReservar}>
                Reservar agora
             </button>
             <button className="btn-ver-quadras" onClick={() => navigate("/quadras")}>

@@ -5,37 +5,8 @@
       "email": "victor07.arndt@hotmail.com",
       "senha": "071102",
       "id": "HQRTikjy0MU"
-    },
-    {
-      "nome": "Thaliana Rosinha Reis",
-      "email": "thata@hotmail.com",
-      "senha": "123456",
-      "id": "yhiXpfeWRwA"
-    },
-    {
-      "nome": "leterye da veiga frolich",
-      "email": "leteryef@gmail.com",
-      "senha": "123456",
-      "id": "-znDoExDM9U"
     }
   ],
-  "reservas": [
-    {
-      "nome": "victor arndt",
-      "email": "victor07.arndt@hotmail.com",
-      "quadra": "Bola Na Rede - Futsal",
-      "data": "2026-05-26",
-      "horario": "21:00",
-      "id": "upZMDBJBWE8"
-    },
-    {
-      "nome": "leterye",
-      "email": "leterye@gmail.com",
-      "quadra": "Paulista - Futsal",
-      "data": "2027-06-10",
-      "horario": "20:00",
-      "id": "Sg9hW5_70QM"
-    }
-  ],
+  "reservas": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

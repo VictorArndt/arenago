@@ -1,6 +1,6 @@
 import "./Header.css"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Login from "../Login/Login"
 import Cadastro from "../Cadastro/Cadastro"
 
@@ -9,17 +9,36 @@ export default function Header() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false)
   const [menuAberto, setMenuAberto] = useState(false)
   const [usuarioLogado, setUsuarioLogado] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const salvo = localStorage.getItem("usuarioLogado")
     if (salvo) setUsuarioLogado(JSON.parse(salvo))
+
+    function handleAbrirLogin(e) {
+      const redirecionarPara = e.detail?.redirecionarPara || null
+      if (redirecionarPara) sessionStorage.setItem("redirecionarAposLogin", redirecionarPara)
+      setMostrarLogin(true)
+    }
+
+    window.addEventListener("abrirLogin", handleAbrirLogin)
+    return () => window.removeEventListener("abrirLogin", handleAbrirLogin)
   }, [])
 
   function handleLogin(usuario) {
-    if (!usuario) return
+    setMostrarLogin(false)
+    if (!usuario) {
+      sessionStorage.removeItem("redirecionarAposLogin")
+      return
+    }
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario))
     setUsuarioLogado(usuario)
-    setMostrarLogin(false)
+
+    const redirecionar = sessionStorage.getItem("redirecionarAposLogin")
+    if (redirecionar) {
+      sessionStorage.removeItem("redirecionarAposLogin")
+      navigate(redirecionar)
+    }
   }
 
   function handleLogout() {
@@ -75,7 +94,10 @@ export default function Header() {
             <>
               <button
                 className="btn-login"
-                onClick={() => setMostrarLogin(true)}
+                onClick={() => {
+                  sessionStorage.removeItem("redirecionarAposLogin")
+                  setMostrarLogin(true)
+                }}
               >
                 Entrar
               </button>

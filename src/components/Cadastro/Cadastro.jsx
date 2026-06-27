@@ -34,7 +34,7 @@ export default function Cadastro({ onFechar }) {
     }
 
     // Verifica se o e-mail já existe
-    const verificacao = await fetch(`http://localhost:3001/usuarios?email=${email}`)
+    const verificacao = await fetch(`http://localhost:3000/usuarios?email=${email}`)
     const jaExiste = await verificacao.json()
 
     if (jaExiste.length > 0) {
@@ -43,7 +43,7 @@ export default function Cadastro({ onFechar }) {
     }
 
     // Cadastra o novo usuário
-    await fetch("http://localhost:3001/usuarios", {
+    await fetch("http://localhost:3000/usuarios", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome, email, senha })

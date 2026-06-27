@@ -18,7 +18,7 @@ export default function Pagamento() {
 
   async function confirmarPagamento() {
     try {
-      await fetch("http://localhost:3001/reservas", {
+      await fetch("http://localhost:3000/reservas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

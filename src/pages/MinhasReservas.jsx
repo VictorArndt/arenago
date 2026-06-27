@@ -24,7 +24,7 @@ export default function MinhasReservas() {
   async function buscarReservas(email) {
     setCarregando(true)
     try {
-      const res = await fetch(`http://localhost:3001/reservas?email=${email}`)
+      const res = await fetch(`http://localhost:3000/reservas?email=${email}`)
       const dados = await res.json()
       // Ordena: futuras primeiro, passadas depois
       const hoje = new Date().toISOString().split("T")[0]
@@ -39,7 +39,7 @@ export default function MinhasReservas() {
 
   async function cancelarReserva(id) {
     try {
-      await fetch(`http://localhost:3001/reservas/${id}`, { method: "DELETE" })
+      await fetch(`http://localhost:3000/reservas/${id}`, { method: "DELETE" })
       setReservas(prev => prev.filter(r => r.id !== id))
       setMensagem("✅ Reserva cancelada com sucesso.")
       setTimeout(() => setMensagem(""), 4000)

@@ -20,7 +20,7 @@ export default function Login({ onFechar }) {
       return
     }
 
-    const resposta = await fetch(`http://localhost:3001/usuarios?email=${email}`)
+    const resposta = await fetch(`http://localhost:3000/usuarios?email=${email}`)
     const usuarios = await resposta.json()
 
     if (usuarios.length === 0) {
